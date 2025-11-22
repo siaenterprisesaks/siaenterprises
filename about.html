@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - SIA Enterprises</title>
+
+    <style>
+        :root {
+            --primary: #0a3d62;
+            --primary-dark: #06263c;
+            --secondary: #082f4a;
+            --accent: #f6b93b;
+            --bg: #f5f7fa;
+            --text: #444;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        header .logo img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ffffff55;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        }
+
+        .header-text {
+            text-align: left;
+            line-height: 1.25;
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffebc2;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .header-text p {
+            margin: 4px 0 0;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #ffe6a8;
+            letter-spacing: 0.5px;
+        }
+
+        nav {
+            background-color: var(--secondary);
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+
+        nav a {
+            color: white;
+            padding: 12px 20px;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        nav a span.nav-icon {
+            margin-right: 6px;
+        }
+
+        nav a:hover {
+            background: #0c4a74;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto 40px;
+            padding: 0 15px 10px;
+        }
+
+        .about-hero {
+            background: white;
+            border-radius: 8px;
+            padding: 30px 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .about-hero h2 {
+            margin: 0 0 10px;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .about-hero p.tagline {
+            margin: 0;
+            font-size: 1rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .section-block {
+            margin-top: 25px;
+            background: white;
+            border-radius: 8px;
+            padding: 22px 20px 24px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+
+        .section-block h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+            font-size: 1.15rem;
+        }
+
+        .section-block p {
+            font-size: 0.96rem;
+            line-height: 1.7;
+            margin: 6px 0;
+        }
+
+        .section-block ul {
+            margin: 8px 0 0 18px;
+            padding: 0;
+        }
+
+        .section-block ul li {
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.95rem;
+        }
+
+        .back-link a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: #f2f2f2;
+            text-align: center;
+            padding: 16px 10px;
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .header-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/website banner.png" alt="SIA Enterprises Logo" />
+    </div>
+    <div class="header-text">
+        <h1>SIA ENTERPRISES</h1>
+        <p>From Our Land To World Hands</p>
+    </div>
+</header>
+
+<nav>
+    <a href="index.html"><span class="nav-icon">🏠</span>Home</a>
+    <a href="about.html"><span class="nav-icon">🧾</span>About</a>
+    <a href="index.html#global"><span class="nav-icon">🌍</span>Global</a>
+    <a href="index.html#products"><span class="nav-icon">📦</span>Products</a>
+    <a href="index.html#enquiry"><span class="nav-icon">📝</span>Enquiry</a>
+    <a href="index.html#contact"><span class="nav-icon">✉️</span>Contact</a>
+</nav>
+
+<main>
+    <section class="about-hero">
+        <h2>About SIA Enterprises</h2>
+        <p class="tagline">Connecting the World Through Quality, Trust, and Excellence</p>
+    </section>
+
+    <section class="section-block">
+        <h3>Who We Are</h3>
+        <p>
+            At SIA Enterprises, global trade is more than just the exchange of goods — it is the bridge that connects
+            cultures, economies and opportunities. Founded with a vision to become a trusted global trading partner,
+            SIA Enterprises today is a dynamic and forward-looking company engaged in the import and export of
+            high-quality products across diverse sectors.
+        </p>
+        <p>
+            From premium Indian spices and agricultural commodities to unique food products like makhana (fox nuts)
+            and innovative processed goods, our business is built on integrity, reliability and customer satisfaction.
+            We are committed to delivering excellence with every shipment and ensuring that our products and services
+            meet the highest international standards.
+        </p>
+    </section>
+
+    <section class="section-block">
+        <h3>Our Story</h3>
+        <p>
+            SIA Enterprises began its journey with a simple yet powerful idea — to make India’s rich and diverse
+            products accessible to global markets, while also bringing high-quality international goods into India.
+            Built on a deep understanding of both domestic and international markets, the company has grown steadily
+            through innovation, ethical business practices and efficient supply chain management.
+        </p>
+        <p>
+            Starting as a small trading venture, we have expanded by collaborating with trusted suppliers, farmers
+            and manufacturers across regions. Today, we are proud to deliver products that reflect India’s legacy
+            of quality and authenticity.
+        </p>
+    </section>
+
+    <section class="section-block">
+        <h3>Our Vision</h3>
+        <p>
+            Our vision is to be recognized globally as a trusted leader in international trade, known for our
+            commitment to quality, transparency and customer satisfaction. We aim to create lasting relationships
+            that add value to every stakeholder — from local producers to global consumers.
+        </p>
+        <p>
+            We strive to empower Indian industries and agricultural communities by connecting them to the global
+            marketplace, showcasing the richness of Indian products while adhering to the highest global standards
+            of trade, packaging and sustainability.
+        </p>
+    </section>
+
+    <section class="section-block">
+        <h3>Our Mission</h3>
+        <p>Our mission is simple yet impactful. We work to:</p>
+        <ul>
+            <li>Deliver superior quality products that meet the evolving demands of international customers.</li>
+            <li>Maintain ethical and transparent business practices at every stage of trade.</li>
+            <li>Ensure timely deliveries, reliable logistics and exceptional customer service.</li>
+            <li>Promote sustainable and responsible sourcing that benefits both producers and consumers.</li>
+            <li>Continuously expand our global reach through innovation, efficiency and excellence.</li>
+        </ul>
+    </section>
+
+    <section class="section-block">
+        <h3>What We Do</h3>
+        <p>
+            SIA Enterprises operates as a global export–import company with diversified product lines. Our expertise
+            covers sourcing, processing, packaging and global distribution of high-quality goods across food, agriculture,
+            FMCG and more.
+        </p>
+        <h4>Exports</h4>
+        <p>We specialise in exporting a wide variety of Indian-origin products, including:</p>
+        <ul>
+            <li><strong>Spices &amp; Herbs:</strong> Turmeric, cumin, coriander, cardamom, black pepper, red chili, cloves, cinnamon, bay leaves, mustard seeds and more.</li>
+            <li><strong>Makhana (foxnuts):</strong> Premium handpicked makhana sourced directly from farmers, processed and packed under hygienic conditions.</li>
+            <li><strong>Pulses, grains and cereals:</strong> High-quality lentils, rice, wheat and millets.</li>
+            <li><strong>Dry fruits &amp; nuts:</strong> Cashews, almonds, raisins and pistachios.</li>
+            <li><strong>Fruit leathers &amp; snack products:</strong> Natural, export-quality fruit leathers, healthy Indian snacks and ready-to-eat goods.</li>
+        </ul>
+        <p>
+            Every product is carefully selected, tested and packed to retain its freshness, flavour and nutritional value.
+            We adhere to international quality certifications and global food safety standards.
+        </p>
+
+        <h4>Imports</h4>
+        <p>
+            Alongside exports, SIA Enterprises also imports high-quality products from global suppliers. Our import
+            operations focus on essential raw materials, specialty foods and industrial products that meet the needs
+            of the Indian market. We work only with reliable manufacturers who share our commitment to quality and sustainability.
+        </p>
+    </section>
+
+    <section class="section-block">
+        <h3>Our Commitment to Quality</h3>
+        <p>
+            Quality lies at the heart of everything we do. From sourcing to shipping, each process is managed with
+            precision and care. We work exclusively with certified producers, modern facilities and trusted logistics
+            partners to ensure our products maintain the highest standards of purity, hygiene and consistency.
+        </p>
+        <p>
+            Our quality control team monitors procurement, inspection, packaging and delivery so that every product
+            reaching our customers reflects our promise of excellence. We also invest in sustainable sourcing and
+            support local farmers and communities to promote fair trade and environmentally responsible production.
+        </p>
+    </section>
+
+    <section class="section-block">
+        <h3>Global Presence and Network</h3>
+        <p>
+            SIA Enterprises has established a strong presence in key international markets. Our distribution network
+            spans countries across Asia, the Middle East, Africa, Europe and North America. Through reliable logistics
+            partners and strategic relationships, we ensure on-time deliveries and seamless international trade operations.
+        </p>
+        <p>
+            Our ability to adapt to regional market needs, regulatory requirements and cultural preferences has helped
+            us build long-term relationships with importers, distributors and retailers worldwide.
+        </p>
+    </section>
+
+    <section class="section-block">
+        <h3>Why Choose SIA Enterprises</h3>
+        <ul>
+            <li><strong>Premium quality assurance:</strong> Every product undergoes rigorous inspection and testing.</li>
+            <li><strong>Competitive pricing:</strong> Efficient operations and scale allow us to offer strong value.</li>
+            <li><strong>Customized solutions:</strong> Products, packaging and logistics tailored to each client’s needs.</li>
+            <li><strong>Strong supply chain:</strong> Robust infrastructure and networks for reliability and speed.</li>
+            <li><strong>Ethical business practices:</strong> Integrity, transparency and accountability at every step.</li>
+            <li><strong>Sustainability:</strong> Responsible trading that supports economic and environmental well-being.</li>
+        </ul>
+    </section>
+
+    <section class="section-block">
+        <h3>Our Team</h3>
+        <p>
+            Behind every successful shipment and satisfied client is our dedicated team. SIA Enterprises brings together
+            professionals with expertise in international trade, logistics, quality control, finance and marketing.
+            Our people are our greatest asset — driven by innovation, guided by values and committed to excellence.
+        </p>
+        <p>
+            Our leadership team continually explores new opportunities and partnerships to ensure that SIA Enterprises
+            stays at the forefront of global trade trends.
+        </p>
+    </section>
+
+    <section class="section-block">
+        <h3>Future Goals</h3>
+        <p>
+            Looking ahead, SIA Enterprises is focused on expanding our product range, entering new markets and adopting
+            cutting-edge technologies to improve efficiency and traceability in our supply chain.
+        </p>
+        <p>
+            We plan to diversify into organic, eco-friendly and value-added products, reflecting our commitment to a
+            sustainable and health-conscious world. We are also investing in digital transformation to enable smoother
+            communication, real-time tracking and enhanced customer engagement.
+        </p>
+    </section>
+
+    <section class="section-block">
+        <h3>Conclusion</h3>
+        <p>
+            SIA Enterprises is more than just an export–import company — we are a global partner committed to delivering
+            value, building trust and fostering connections across borders. With our customer-first approach, unwavering
+            focus on quality and passion for progress, we aim to continue growing as a leading force in international trade.
+        </p>
+        <p>
+            At SIA Enterprises, we don’t just move products — we move trust, opportunity and prosperity across the world.
+        </p>
+    </section>
+
+    <div class="back-link">
+        <a href="index.html">← Back to Home</a>
+    </div>
+</main>
+
+<footer>
+    © 2025 SIA Enterprises · All Rights Reserved
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIA Enterprises - Export & Import</title>
+
+    <style>
+        :root {
+            --primary: #0a3d62;
+            --primary-dark: #06263c;
+            --secondary: #082f4a;
+            --accent: #f6b93b;
+            --bg: #f5f7fa;
+            --text: #444;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* ===== HEADER (logo + text) ===== */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        header .logo img {
+            width: 95px;
+            height: 95px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ffffff55;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        }
+
+        .header-text {
+            text-align: left;
+            line-height: 1.25;
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffebc2;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .header-text p {
+            margin: 4px 0 0;
+            font-size: 1rem;
+            font-style: italic;
+            color: #ffe6a8;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            background-color: var(--secondary);
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+
+        nav a {
+            color: white;
+            padding: 12px 20px;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        nav a span.nav-icon {
+            margin-right: 6px;
+        }
+
+        nav a:hover {
+            background: #0c4a74;
+        }
+
+        /* ===== GENERIC SECTIONS ===== */
+        section {
+            background: white;
+            margin: 30px auto;
+            padding: 50px 15%;
+            border-radius: 8px;
+            max-width: 1100px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+
+        section p {
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        /* ===== HERO SECTION + SLIDER ===== */
+        #hero p.lead {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            color: #555;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            max-height: 420px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .slider img {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .slider img.active {
+            opacity: 1;
+            position: relative;
+        }
+
+        /* ===== SIMPLE GRID / CARDS ===== */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 18px 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 6px;
+            color: var(--primary-dark);
+            font-size: 1.05rem;
+        }
+
+        .card-icon {
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* ===== GLOBAL PRESENCE SECTION ===== */
+        #global {
+            background: linear-gradient(135deg, #eaf3ff, #fef9e7);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        #global .global-inner {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 30px;
+            align-items: center;
+        }
+
+        .global-stats {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        .global-stats li {
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .map-placeholder {
+            border-radius: 14px;
+            border: 1px dashed #b0c4de;
+            padding: 24px 16px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            background: rgba(255,255,255,0.7);
+        }
+
+        .map-placeholder span {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* ===== ENQUIRY FORM ===== */
+        #enquiry {
+            background: #ffffff;
+        }
+
+        .enquiry-intro {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .enquiry-form {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #f9fbff;
+            border-radius: 10px;
+            padding: 20px 18px 22px;
+            border: 1px solid #d6e2ff;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid #c7d3e8;
+            font-size: 0.9rem;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .form-note {
+            font-size: 0.78rem;
+            color: #777;
+            margin-top: 6px;
+        }
+
+        .form-actions {
+            text-align: right;
+            margin-top: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            padding: 9px 20px;
+            border-radius: 22px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        #contact p {
+            text-align: center;
+        }
+
+        /* ===== PREMIUM FOOTER ===== */
+        footer {
+            background: var(--primary-dark);
+            color: #f2f2f2;
+            margin-top: 40px;
+            padding: 30px 20px 15px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1.3fr 1.3fr 1.3fr;
+            gap: 25px;
+            font-size: 0.9rem;
+        }
+
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #ffe6a8;
+        }
+
+        .footer-inner p {
+            margin: 4px 0;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #f2f2f2;
+            text-decoration: none;
+            margin: 3px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-social span {
+            margin-right: 10px;
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 0.8rem;
+            color: #d0d0d0;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            section {
+                padding: 35px 8%;
+            }
+            .grid-3 {
+                grid-template-columns: 1fr 1fr;
+            }
+            #global .global-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .header-text {
+                text-align: center;
+            }
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="logo">
+        <img src="images/website banner.png" alt="SIA Enterprises Logo" />
+    </div>
+
+    <div class="header-text">
+        <h1>SIA ENTERPRISES</h1>
+        <p>From Our Land To World Hands</p>
+    </div>
+</header>
+
+<!-- ===== NAVBAR WITH ICONS ===== -->
+<nav>
+    <a href="#hero"><span class="nav-icon">🏠</span>Home</a>
+    <a href="about.html"><span class="nav-icon">🧾</span>About</a>
+    <a href="#global"><span class="nav-icon">🌍</span>Global</a>
+    <a href="#products"><span class="nav-icon">📦</span>Products</a>
+    <a href="#enquiry"><span class="nav-icon">📝</span>Enquiry</a>
+    <a href="#contact"><span class="nav-icon">✉️</span>Contact</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+    <h2>Welcome to SIA Enterprises</h2>
+    <p class="lead">
+        We are a global trading company connecting premium Indian products and quality international goods
+        with markets across the world through reliable export and import services.
+    </p>
+
+    <div class="slider">
+        <img src="images/home page slides 1.png" class="active" alt="Slide 1" />
+        <img src="images/home page slides 2.png" alt="Slide 2" />
+        <img src="images/home page slides 3.png" alt="Slide 3" />
+        <img src="images/home page slides 4.png" alt="Slide 4" />
+    </div>
+</section>
+
+<!-- ===== SHORT ABOUT ===== -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        At Sia Enterprises, we believe that global trade is more than just the exchange of goods — it is the bridge that connects cultures, economies, and opportunities. Founded with a vision to become a trusted global trading partner, Sia Enterprises stands today as a dynamic and forward-looking company engaged in the import and export of high-quality products across diverse sectors.
+    </p>
+    <p style="text-align:center; margin-top:16px;">
+        <a href="about.html" style="color:#0a3d62; font-weight:600; text-decoration:none;">
+            Learn more about our story, vision and mission →
+        </a>
+    </p>
+</section>
+
+
+<!-- ===== PRODUCTS WITH CARDS ===== -->
+<section id="products">
+    <h2>Our Product Categories</h2>
+    <p>
+        We supply a wide range of agricultural, food, industrial, and consumer goods. Based
+        on your specific requirement and target market, we can source and customize product
+        offerings to match your quality and compliance needs.
+    </p>
+    <div class="slider">
+        <img src="images/SIA ENTERPRISES1.png" class="active" alt="Slide 1" />
+        <img src="images/SIA ENTERPRISES2.png" alt="Slide 2" />
+    </div>
+
+ </section>
+
+<!-- ===== ENQUIRY FORM ===== -->
+<section id="enquiry">
+    <h2>Trade Enquiry Form</h2>
+    <p class="enquiry-intro">
+        Share your requirement details and we will get back to you with pricing,
+        product options and next steps.
+    </p>
+
+    <form class="enquiry-form" action="#" method="post">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="name">Full Name*</label>
+                <input id="name" name="name" type="text" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+                <label for="company">Company Name</label>
+                <input id="company" name="company" type="text" placeholder="Your company" />
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="email">Email*</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input id="phone" name="phone" type="tel" placeholder="+91-XXXXXXXXXX" />
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="country">Country / Region</label>
+                <input id="country" name="country" type="text" placeholder="Buyer country / region" />
+            </div>
+            <div class="form-group">
+                <label for="category">Product Category</label>
+                <select id="category" name="category">
+                    <option value="">Select</option>
+                    <option>Agro & Food Products</option>
+                    <option>FMCG & Consumer Goods</option>
+                    <option>Industrial / Custom Sourcing</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="quantity">Expected Order Quantity</label>
+                <input id="quantity" name="quantity" type="text" placeholder="e.g. 1 x 20ft container / MOQ details" />
+            </div>
+            <div class="form-group">
+                <label for="incoterms">Preferred Incoterms</label>
+                <select id="incoterms" name="incoterms">
+                    <option value="">Select</option>
+                    <option>FOB</option>
+                    <option>CIF</option>
+                    <option>CNF</option>
+                    <option>EXW</option>
+                    <option>Other / To be discussed</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="port">Preferred Port of Loading (if any)</label>
+            <input id="port" name="port" type="text" placeholder="e.g. Nhava Sheva, Mundra, Chennai, etc." />
+        </div>
+
+        <div class="form-group">
+            <label for="message">Product Details / Requirement*</label>
+            <textarea id="message" name="message" required placeholder="Briefly describe products, specs, packaging, target price, and any other important details."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="consent" />
+                I agree to be contacted by SIA Enterprises regarding this enquiry.
+            </label>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">Submit Enquiry (static)</button>
+        </div>
+        <div class="form-note">
+            *This is a static demo form. To receive enquiries directly, connect this form
+            later with your email or backend service.
+        </div>
+    </form>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>
+        For trade enquiries, custom sourcing, or partnership opportunities, please reach out:
+    </p>
+    <p><strong>Company:</strong> SIA Enterprises</p>
+    <p><strong>Email:</strong> siaenterprisesaks@gmail.com</p>
+</section>
+
+<!-- ===== PREMIUM FOOTER ===== -->
+<footer>
+    <div class="footer-inner">
+        <div>
+            <div class="footer-title">SIA Enterprises</div>
+            <p>
+                From our land to world hands – connecting quality products with global buyers
+                through trusted export & import services.
+            </p>
+        </div>
+
+        <div>
+            <div class="footer-title">Quick Links</div>
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="#global">Global Presence</a>
+                <a href="#products">Products</a>
+                <a href="#enquiry">Enquiry</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <div>
+            <div class="footer-title">Contact</div>
+            <p>siaenterprisesaks@gmail.com</p>
+        </div>
+
+        <div>
+            <div class="footer-title">Follow Us</div>
+            <div class="footer-social">
+                <span title="LinkedIn">💼</span>
+                <span title="Facebook">📘</span>
+                <span title="Instagram">📸</span>
+            </div>
+            <p style="font-size:0.8rem; margin-top:6px;"></p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 SIA Enterprises · All Rights Reserved
+    </div>
+</footer>
+
+<script>
+    // Simple auto slider
+    window.onload = function () {
+        const slides = document.querySelectorAll(".slider img");
+        let index = 0;
+        setInterval(() => {
+            slides[index].classList.remove("active");
+            index = (index + 1) % slides.length;
+            slides[index].classList.add("active");
+        }, 4000);
+    };
+</script>
+
+</body>
+</html>
